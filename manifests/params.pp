@@ -75,7 +75,8 @@ class mrepo::params (
   $rhn          = false,
   $rhn_username = undef,
   $rhn_password = undef,
-  $mailto       = 'UNSET'
+  $mailto       = 'UNSET',
+  $createrepo_options  = '',
 ) {
   validate_re($source, "^git$|^package$")
   validate_bool($rhn)

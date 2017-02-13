@@ -10,6 +10,9 @@ rhnlogin = <%= scope.lookupvar('mrepo::params::rhn_username') %>:<%= scope.looku
 <% elsif not scope.lookupvar('mrepo::params::rhn_username').empty? -%>
 rhnlogin = <%= scope.lookupvar('mrepo::params::rhn_username') %>
 <% end -%>
+<% if not scope.lookupvar('mrepo::params::createrepo_options').empty? -%>
+createrepo-options = <%= scope.lookupvar('mrepo::params::createrepo_options') %>
+<% end -%>
 
 <% unless (mailto = scope.lookupvar('mrepo::params::mailto')) == 'UNSET' -%>
 mailto = <%= @mailto %>
