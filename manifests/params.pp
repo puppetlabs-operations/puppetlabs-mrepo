@@ -62,7 +62,7 @@
 #
 # [*genid_command*]
 # The base command to use to generate a systemid for RHN (mrepo::repo::rhn).
-# Default: /usr/bin/gensystemid 
+# Default: /usr/bin/gensystemid
 #
 # [*mailto*]
 #
@@ -91,28 +91,29 @@
 # Copyright 2011 Puppet Labs, unless otherwise noted
 #
 class mrepo::params (
-  $src_root       = '/var/mrepo',
-  $www_root       = '/var/www/mrepo',
-  $www_servername = 'mrepo',
-  $www_ip         = $::ipaddress,
-  $www_ip_based   = false,
-  $user           = 'apache',
-  $group          = 'apache',
-  $source         = 'package',
-  $ensure_src     = 'latest',
-  $selinux        = undef,
-  $rhn            = false,
-  $rhn_config     = false,
-  $rhn_username   = '',
-  $rhn_password   = '',
-  $genid_command  = '/usr/bin/gensystemid',
-  $mailto         = 'UNSET',
-  $git_proto      = 'git',
-  $descriptions   = {},
-  $http_proxy     = '',
-  $https_proxy    = '',
-  $priority       = '10',
-  $port           = '80',
+  $src_root            = '/var/mrepo',
+  $www_root            = '/var/www/mrepo',
+  $www_servername      = 'mrepo',
+  $www_ip              = $::ipaddress,
+  $www_ip_based        = false,
+  $user                = 'apache',
+  $group               = 'apache',
+  $source              = 'package',
+  $ensure_src          = 'latest',
+  $selinux             = undef,
+  $rhn                 = false,
+  $rhn_config          = false,
+  $rhn_username        = '',
+  $rhn_password        = '',
+  $genid_command       = '/usr/bin/gensystemid',
+  $mailto              = 'UNSET',
+  $git_proto           = 'git',
+  $descriptions        = {},
+  $http_proxy          = '',
+  $https_proxy         = '',
+  $priority            = '10',
+  $port                = '80',
+  $createrepo_options  = '',
 ) {
   validate_re($source, '^git$|^package$')
   validate_re($git_proto, '^git$|^https$')

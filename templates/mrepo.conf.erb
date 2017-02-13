@@ -5,6 +5,9 @@ srcdir  = <%= @src_root %>
 wwwdir  = <%= @www_root %>
 confdir = /etc/mrepo.conf.d
 
+<% if not @createrepo_options.empty? -%>
+createrepo-options = <%= @createrepo_options %>
+<% end -%>
 <% if not @http_proxy.empty? -%>
 http_proxy = <%= @http_proxy %>
 <% end -%>
