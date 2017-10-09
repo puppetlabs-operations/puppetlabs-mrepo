@@ -108,7 +108,7 @@ define mrepo::repo (
   include mrepo::params
 
   validate_re($ensure, "^present$|^absent$")
-  validate_re($arch, "^i386$|^i586$|^x86_64$|^ppc$|^s390$|^s390x$|^ia64$")
+  validate_re($arch, "^i386$|^i586$|^x86_64$|^ppc$|^s390$|^s390x$|^ia64$|^ppc64le$")
   validate_re($update, "^now$|^nightly$|^weekly$|^never$")
 
   # mrepo tries to be clever, and if the arch is the suffix of the name will
