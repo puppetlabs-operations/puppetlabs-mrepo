@@ -217,7 +217,6 @@ define mrepo::repo (
           backup  => false,
           recurse => false,
           force   => true,
-          before  => File[$src_root_subdir],
           require => Exec["Unmount any mirrored ISOs for ${name}"];
         "${mrepo::params::src_root}/$name":
           ensure  => absent,
